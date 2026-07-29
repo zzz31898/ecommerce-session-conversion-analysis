@@ -1,4 +1,4 @@
-# 电商网站用户行为与购买转化分析
+# 电商网站会话行为与购买转化分析
 
 ## 项目概述
 
@@ -10,11 +10,19 @@
 
 ## 看板预览
 
+### 网站转化总览
+
+![网站整体会话、转化率、访客类型、流量来源及终端表现](assets/screenshots/电商网站转化总览.png)
+
 | 用户行为分析 | 增长机会分析 |
 | --- | --- |
 | ![产品页浏览、停留、跳出与购买转化分析](assets/screenshots/电商用户行为分析.png) | ![高潜未购买会话与流量来源机会分析](assets/screenshots/电商增长机会分析.png) |
 
-完整 Power BI 看板共 4 页：网站转化总览、用户行为分析、增长机会分析和模型评估。页面指标和图表均随月份、访客类型、流量来源等筛选条件联动。
+### 模型评估
+
+![会话行为模型指标、Bootstrap置信区间、Lift与特征可用性评估](assets/screenshots/电商模型评估.png)
+
+完整 Power BI 看板共 4 页：网站转化总览、用户行为分析、增长机会分析和模型评估。页面指标和图表均随月份、访客类型、流量来源等筛选条件联动。截图采用默认筛选状态；如进行筛选或下钻，卡片与图表会按当前筛选上下文重新计算。
 
 ## 核心业务问题
 
@@ -56,10 +64,10 @@
 ## 项目结构
 
 ```text
-电商网站用户行为与购买转化分析/
+电商网站会话行为与购买转化分析/
 ├── assets/screenshots/                       # 作品集使用的 Power BI 看板预览
 ├── data/processed/
-│   └── online_shoppers_cleaned_base.csv     # 清洗后基础数据
+│   └── online_shoppers_cleaned_base.csv     # 运行清洗脚本后生成，不纳入版本控制
 ├── online_shoppers_intention.csv            # UCI 原始数据
 ├── online_shoppers_analysis_ready_v2.csv    # 含派生字段的分析主数据
 ├── 01_分析口径说明.md                       # 指标口径和项目边界
@@ -89,7 +97,7 @@
 | 阶段 | 脚本或文档 | 产出 |
 | --- | --- | --- |
 | 1. 口径定义 | `01_分析口径说明.md` | 明确会话级范围、指标和限制 |
-| 2. 数据检查与清洗 | `02_数据检查与清洗.py` | `data/processed/online_shoppers_cleaned_base.csv` |
+| 2. 数据检查与清洗 | `02_数据检查与清洗.py` | `data/processed/online_shoppers_cleaned_base.csv`（运行后生成，不纳入版本控制） |
 | 3. 字段工程 | `03_字段工程.py` | `online_shoppers_analysis_ready_v2.csv` |
 | 4. 探索性分析 | `04_探索性分析.py` | `outputs/eda/` 与探索性分析报告 |
 | 5. 统计检验 | `05_统计检验.py` | `outputs/statistics/` 与统计检验报告 |

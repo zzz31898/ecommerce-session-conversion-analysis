@@ -1,0 +1,25 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["model_decile_lift","model_evaluation","model_metric_ci","model_operating_points","vw_growth_opportunities","vw_session_analysis","vw_traffic_performance","model_feature_availability"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table model_decile_lift
+ref table model_evaluation
+ref table model_metric_ci
+ref table model_operating_points
+ref table vw_growth_opportunities
+ref table vw_session_analysis
+ref table vw_traffic_performance
+ref table model_feature_availability
+
+ref cultureInfo zh-CN
+

@@ -1,0 +1,3 @@
+﻿Scenario,ScenarioName,Model,ModelName,Threshold,Accuracy,Precision,Recall,F1,ROCAUC,PRAUC,BrierScore
+early_propensity,排除PageValues的会话行为模型,random_forest,随机森林,0.439818181,0.7246553122,0.3017356475,0.5916230366,0.3996463307,0.7655761675,0.3583963551,0.1497851
+late_session,PageValues回顾性基准模型,random_forest,随机森林,0.5570019246,0.8888888889,0.6210762332,0.7251308901,0.6690821256,0.9223314508,0.7202764619,0.08866787936

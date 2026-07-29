@@ -1,0 +1,177 @@
+table model_evaluation
+	lineageTag: 57865fdd-3f60-4d96-8e60-38ad5ec41b94
+
+	measure '行为模型 PR-AUC' =
+			
+			CALCULATE(
+			    MAX('model_evaluation'[PRAUC]),
+			    'model_evaluation'[Scenario] = "early_propensity"
+			)
+		formatString: 0.000
+		lineageTag: b0fbc81b-4be5-476d-8b74-6a56a706c821
+
+	measure '行为模型 ROC-AUC' =
+			
+			CALCULATE(
+			    MAX('model_evaluation'[ROCAUC]),
+			    'model_evaluation'[Scenario] = "early_propensity"
+			)
+		formatString: 0.000
+		lineageTag: ec54f3b4-d832-4f75-aab0-d8b3e7ea1e14
+
+	measure '行为模型 Precision' =
+			
+			CALCULATE(
+			    MAX('model_evaluation'[PrecisionValue]),
+			    'model_evaluation'[Scenario] = "early_propensity"
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d7c38d93-22c1-4c92-b5fc-f3f09a571841
+
+	measure '行为模型 Recall' =
+			
+			CALCULATE(
+			    MAX('model_evaluation'[RecallValue]),
+			    'model_evaluation'[Scenario] = "early_propensity"
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: b3637668-e570-4000-bd4c-f21ed3e48162
+
+	measure '行为模型 F1' =
+			
+			CALCULATE(
+			    MAX('model_evaluation'[F1]),
+			    'model_evaluation'[Scenario] = "early_propensity"
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 548a016d-3d4e-454c-91dc-eb21da5115ae
+
+	measure '行为模型 Brier' =
+			
+			CALCULATE(
+			    MAX('model_evaluation'[BrierScore]),
+			    'model_evaluation'[Scenario] = "early_propensity"
+			)
+		formatString: 0.000
+		lineageTag: 0e424033-6a7a-420e-8b67-da42a245aadf
+
+	column Scenario
+		dataType: string
+		lineageTag: 24de891d-568b-4e6f-af88-2d1a1fd9b2e9
+		summarizeBy: none
+		sourceColumn: Scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScenarioName
+		dataType: string
+		lineageTag: 3d7b2b2c-247c-45ed-86f7-0d7cabaf1355
+		summarizeBy: none
+		sourceColumn: ScenarioName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: 2fd4995a-a3cb-46bf-ae85-994d5bf3deb5
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModelName
+		dataType: string
+		lineageTag: 6a670085-d818-4682-a5e1-37faa29e3712
+		summarizeBy: none
+		sourceColumn: ModelName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Threshold
+		dataType: double
+		lineageTag: e74bd261-dac6-4e76-a282-4a04645daed7
+		summarizeBy: sum
+		sourceColumn: Threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Accuracy
+		dataType: double
+		lineageTag: 9d7c21f4-8907-4744-8673-52f2add7164e
+		summarizeBy: sum
+		sourceColumn: Accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PrecisionValue
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7f1eddb9-d679-463d-a69e-5f08dba8990f
+		summarizeBy: sum
+		sourceColumn: PrecisionValue
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecallValue
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 2589975d-ce5b-45b6-b7c8-242e2d8f215c
+		summarizeBy: sum
+		sourceColumn: RecallValue
+
+		annotation SummarizationSetBy = Automatic
+
+	column F1
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: b4f22fd0-1df1-4aab-a591-19d8293fa591
+		summarizeBy: sum
+		sourceColumn: F1
+
+		annotation SummarizationSetBy = Automatic
+
+	column ROCAUC
+		dataType: double
+		lineageTag: 8a5abb90-351f-4ba2-b73f-aac599dd9198
+		summarizeBy: sum
+		sourceColumn: ROCAUC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRAUC
+		dataType: double
+		formatString: 0.000
+		lineageTag: 4f18a993-d6da-4100-9f31-627b2033dd3e
+		summarizeBy: sum
+		sourceColumn: PRAUC
+
+		annotation SummarizationSetBy = Automatic
+
+	column BrierScore
+		dataType: double
+		formatString: 0.000
+		lineageTag: 43a9c7cf-9a8b-4cd7-8ef0-f54049eedae1
+		summarizeBy: sum
+		sourceColumn: BrierScore
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_evaluation = m
+		mode: import
+		source =
+				let
+				  源 = MySQL.Database("localhost:3306", "online_shoppers_analytics"),
+				  #"导航 1" = 源{[Schema = "online_shoppers_analytics", Item = "model_evaluation"]}[Data]
+				in
+				  #"导航 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,27 @@
+relationship AutoDetected_1d3e3246-bea3-4a41-ae95-08538575193a
+	fromColumn: model_decile_lift.Scenario
+	toColumn: model_evaluation.Scenario
+
+relationship AutoDetected_aa628aef-260e-4bdb-ae39-bc0ea26061fe
+	fromColumn: model_metric_ci.Scenario
+	toColumn: model_evaluation.Scenario
+
+relationship AutoDetected_36c1ca0b-bce1-48d3-a56a-8d91ceac4a8d
+	fromColumn: model_operating_points.Scenario
+	toColumn: model_evaluation.Scenario
+
+relationship AutoDetected_7eef19d6-4d0f-4425-92c7-0cc10a1a0ef2
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: vw_growth_opportunities.SessionID
+	toColumn: vw_session_analysis.SessionID
+
+relationship AutoDetected_a56505f5-e34b-459c-bca0-39af056da756
+	fromColumn: vw_growth_opportunities.TrafficType
+	toColumn: vw_traffic_performance.TrafficType
+
+relationship AutoDetected_60d02646-8ef6-461b-9760-1193a29558c6
+	isActive: false
+	fromColumn: vw_session_analysis.TrafficType
+	toColumn: vw_traffic_performance.TrafficType
+

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "b7ec0057970e21b3b588",
+  "position": {
+    "x": -0.41669527689612806,
+    "y": 115.81472608778208,
+    "z": 3000,
+    "height": 97.777777777777771,
+    "width": 205.55555555555554,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "会话数量"
+                }
+              },
+              "queryRef": "vw_session_analysis.会话数量",
+              "nativeQueryRef": "会话数量"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_session_analysis"
+                  }
+                },
+                "Property": "会话数量"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

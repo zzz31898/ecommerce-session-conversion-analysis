@@ -1,0 +1,207 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "47f737c6b4d4b3aca93b",
+  "position": {
+    "x": 0,
+    "y": 90,
+    "z": 3000,
+    "height": 177.14285714285717,
+    "width": 577.14285714285722,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "lineClusteredColumnComboChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "ProductDepthGroup"
+                }
+              },
+              "queryRef": "vw_session_analysis.ProductDepthGroup",
+              "nativeQueryRef": "ProductDepthGroup",
+              "active": true
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "购买会话数"
+                }
+              },
+              "queryRef": "vw_session_analysis.购买会话数",
+              "nativeQueryRef": "购买会话数"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "平均产品页浏览量"
+                }
+              },
+              "queryRef": "vw_session_analysis.平均产品页浏览量",
+              "nativeQueryRef": "平均产品页浏览量"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "平均产品页停留时长"
+                }
+              },
+              "queryRef": "vw_session_analysis.平均产品页停留时长",
+              "nativeQueryRef": "平均产品页停留时长"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "平均跳出率"
+                }
+              },
+              "queryRef": "vw_session_analysis.平均跳出率",
+              "nativeQueryRef": "平均跳出率"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "平均退出率"
+                }
+              },
+              "queryRef": "vw_session_analysis.平均退出率",
+              "nativeQueryRef": "平均退出率"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "会话数量"
+                }
+              },
+              "queryRef": "vw_session_analysis.会话数量",
+              "nativeQueryRef": "会话数量"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "购买转化率"
+                }
+              },
+              "queryRef": "vw_session_analysis.购买转化率",
+              "nativeQueryRef": "购买转化率"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "showSeries": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_session_analysis.会话数量"
+          }
+        },
+        {
+          "properties": {
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Above'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_session_analysis.购买转化率"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'产品页浏览深度与购买转化率'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

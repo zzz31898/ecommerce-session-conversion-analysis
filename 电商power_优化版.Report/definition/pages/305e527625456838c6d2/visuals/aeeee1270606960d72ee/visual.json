@@ -1,0 +1,205 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "aeeee1270606960d72ee",
+  "position": {
+    "x": 462.22222222222223,
+    "y": 197.77777777777777,
+    "z": 3009,
+    "height": 170,
+    "width": 696.66666666666663,
+    "tabOrder": 3009
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_traffic_performance"
+                    }
+                  },
+                  "Property": "ChannelOpportunityType"
+                }
+              },
+              "queryRef": "vw_traffic_performance.ChannelOpportunityType",
+              "nativeQueryRef": "渠道机会类型"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_traffic_performance"
+                    }
+                  },
+                  "Property": "SessionCount"
+                }
+              },
+              "queryRef": "vw_traffic_performance.SessionCount",
+              "nativeQueryRef": "会话数量",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_traffic_performance"
+                    }
+                  },
+                  "Property": "PurchaseConversionRate"
+                }
+              },
+              "queryRef": "vw_traffic_performance.PurchaseConversionRate",
+              "nativeQueryRef": "购买转化率"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'流量规模与转化质量'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "693f4766590004531c1a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_traffic_performance"
+              }
+            },
+            "Property": "SessionCount"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0bc80c1b46505120885c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_traffic_performance"
+              }
+            },
+            "Property": "PurchaseConversionRate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c827ed6fb9bcade0122a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_traffic_performance"
+              }
+            },
+            "Property": "ChannelOpportunityType"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1bdda5d317346a330ba0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "OpportunityPriority"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vw_growth_opportunities",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "v"
+                          }
+                        },
+                        "Property": "OpportunityPriority"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'P1 历史高潜未购买'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "requireSingleSelect": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

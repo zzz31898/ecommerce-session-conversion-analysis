@@ -1,0 +1,80 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "bc86be37b3058525b406",
+  "position": {
+    "x": 0,
+    "y": 600,
+    "z": 5,
+    "height": 120,
+    "width": 1010,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_feature_availability"
+                    }
+                  },
+                  "Property": "FeatureGroup"
+                }
+              },
+              "queryRef": "model_feature_availability.FeatureGroup",
+              "nativeQueryRef": "特征组"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_feature_availability"
+                    }
+                  },
+                  "Property": "Availability"
+                }
+              },
+              "queryRef": "model_feature_availability.Availability",
+              "nativeQueryRef": "数据可用时点"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_feature_availability"
+                    }
+                  },
+                  "Property": "AllowedForRealTimeEarlyIntervention"
+                }
+              },
+              "queryRef": "model_feature_availability.AllowedForRealTimeEarlyIntervention",
+              "nativeQueryRef": "可用于实时早期干预"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_feature_availability"
+                    }
+                  },
+                  "Property": "Decision"
+                }
+              },
+              "queryRef": "model_feature_availability.Decision",
+              "nativeQueryRef": "使用结论"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

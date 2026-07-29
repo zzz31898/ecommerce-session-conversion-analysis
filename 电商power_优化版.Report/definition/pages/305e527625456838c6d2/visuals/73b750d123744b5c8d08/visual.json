@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "73b750d123744b5c8d08",
+  "position": {
+    "x": 463.07692307692304,
+    "y": 90,
+    "z": 3002,
+    "height": 124.61538461538461,
+    "width": 276.92307692307691,
+    "tabOrder": 3002
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "历史高潜未购买数"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.历史高潜未购买数",
+              "nativeQueryRef": "历史高潜未购买数"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_growth_opportunities"
+                  }
+                },
+                "Property": "历史高潜未购买数"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_growth_opportunities.历史高潜未购买数"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

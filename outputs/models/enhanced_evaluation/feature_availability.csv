@@ -1,0 +1,4 @@
+﻿FeatureGroup,Fields,Availability,AllowedForRealTimeEarlyIntervention,Decision
+会话入口或稳定属性,"Month, OperatingSystems, Browser, Region, TrafficType, VisitorType, Weekend",需由埋点/会话创建时确认,待确认,当前仅可作为会话级分析特征，不能假定实时可用。
+整段会话聚合行为,"Administrative, Informational, ProductRelated, *_Duration, BounceRates, ExitRates, SpecialDay",会话进行中或结束后才逐步/完整形成,否,当前数据没有观察窗口和事件时间戳，因此不能称为早期实时特征。
+PageValues,PageValues,与交易归因关系密切，实际生成时点未验证,否,仅作为回顾性基准；在获得字段生成时点证据前不进入部署模型。

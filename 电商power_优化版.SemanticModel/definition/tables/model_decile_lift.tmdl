@@ -1,0 +1,119 @@
+table model_decile_lift
+	lineageTag: 98b1ddd7-918a-47a4-b419-1ed733be57ae
+
+	column Scenario
+		dataType: string
+		lineageTag: fa56fded-ddbe-485b-9b1c-e55bb933fe42
+		summarizeBy: none
+		sourceColumn: Scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: 2d983682-aec0-4cdf-a8a8-18a32f98ef2f
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScoreDecileHighToLow
+		dataType: int64
+		formatString: 0
+		lineageTag: 0aeffcdc-3459-40a7-bf40-5c24b082e2aa
+		summarizeBy: sum
+		sourceColumn: ScoreDecileHighToLow
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sessions
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ef22f81-e9fa-46d1-807e-183d03994f5e
+		summarizeBy: sum
+		sourceColumn: Sessions
+
+		annotation SummarizationSetBy = Automatic
+
+	column Purchases
+		dataType: int64
+		formatString: 0
+		lineageTag: 6795530d-4fc5-4971-b787-eae21056b6d2
+		summarizeBy: sum
+		sourceColumn: Purchases
+
+		annotation SummarizationSetBy = Automatic
+
+	column MeanScore
+		dataType: double
+		lineageTag: b47939d1-d48e-4119-9524-85cc34793857
+		summarizeBy: sum
+		sourceColumn: MeanScore
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ObservedConversionRate
+		dataType: double
+		lineageTag: 78ade1e2-973a-480f-95c3-581baf2ec63d
+		summarizeBy: sum
+		sourceColumn: ObservedConversionRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LiftVsTestBaseline
+		dataType: double
+		lineageTag: 3ebc3be9-e9ad-47a4-83c8-1e6e5c2e430c
+		summarizeBy: sum
+		sourceColumn: LiftVsTestBaseline
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CumulativeSessions
+		dataType: int64
+		formatString: 0
+		lineageTag: 8a8097c9-34ab-4d73-950e-4f3bce355f81
+		summarizeBy: sum
+		sourceColumn: CumulativeSessions
+
+		annotation SummarizationSetBy = Automatic
+
+	column CumulativePurchases
+		dataType: int64
+		formatString: 0
+		lineageTag: 7dec3348-e891-42d3-a59c-d30d08a9c314
+		summarizeBy: sum
+		sourceColumn: CumulativePurchases
+
+		annotation SummarizationSetBy = Automatic
+
+	column CumulativeRecall
+		dataType: double
+		lineageTag: fee2cf55-9bc3-4afe-8674-bb0e958c16b7
+		summarizeBy: sum
+		sourceColumn: CumulativeRecall
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition model_decile_lift = m
+		mode: import
+		source =
+				let
+				  源 = MySQL.Database("localhost:3306", "online_shoppers_analytics"),
+				  #"导航 1" = 源{[Schema = "online_shoppers_analytics", Item = "model_decile_lift"]}[Data]
+				in
+				  #"导航 1"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

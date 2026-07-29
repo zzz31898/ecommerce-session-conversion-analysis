@@ -1,0 +1,115 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "b31018f00076044db843",
+  "position": {
+    "x": 473,
+    "y": 484,
+    "z": 12000,
+    "height": 236,
+    "width": 424,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "lineStackedColumnComboChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "TrafficType"
+                }
+              },
+              "queryRef": "vw_session_analysis.TrafficType",
+              "nativeQueryRef": "TrafficType",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "会话数量"
+                }
+              },
+              "queryRef": "vw_session_analysis.会话数量",
+              "nativeQueryRef": "会话数量"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "购买转化率"
+                }
+              },
+              "queryRef": "vw_session_analysis.购买转化率",
+              "nativeQueryRef": "购买转化率"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_session_analysis"
+                  }
+                },
+                "Property": "会话数量"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'流量来源表现'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

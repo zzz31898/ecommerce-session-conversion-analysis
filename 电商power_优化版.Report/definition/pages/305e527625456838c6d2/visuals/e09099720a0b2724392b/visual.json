@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "e09099720a0b2724392b",
+  "position": {
+    "x": 462.22222222222223,
+    "y": 375.55555555555554,
+    "z": 3007,
+    "height": 167.77777777777777,
+    "width": 696.66666666666663,
+    "tabOrder": 3007
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "ProductDepthGroup"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.ProductDepthGroup",
+              "nativeQueryRef": "ProductDepthGroup",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "未购买会话数"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.未购买会话数",
+              "nativeQueryRef": "未购买会话数"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'回访未购买图'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

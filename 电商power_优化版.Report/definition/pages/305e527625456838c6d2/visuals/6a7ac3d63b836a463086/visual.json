@@ -1,0 +1,392 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "6a7ac3d63b836a463086",
+  "position": {
+    "x": 0,
+    "y": 535.55555555555554,
+    "z": 3010,
+    "height": 184.44444444444443,
+    "width": 1280,
+    "tabOrder": 3010
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "SessionID"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.SessionID",
+              "nativeQueryRef": "会话编号"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "BehaviorPropensityScore"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.BehaviorPropensityScore",
+              "nativeQueryRef": "倾向分数"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "PropensityPercentileAmongUnpurchased"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.PropensityPercentileAmongUnpurchased",
+              "nativeQueryRef": "未购买会话分位"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "OpportunityPriority"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.OpportunityPriority",
+              "nativeQueryRef": "机会优先级"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "VisitorType"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.VisitorType",
+              "nativeQueryRef": "访客类型"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "TrafficType"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.TrafficType",
+              "nativeQueryRef": "流量来源"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "Month"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.Month",
+              "nativeQueryRef": "月份"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "ProductRelated"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.ProductRelated",
+              "nativeQueryRef": "产品页浏览量"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "ProductRelated_Duration"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.ProductRelated_Duration",
+              "nativeQueryRef": "产品页停留时长"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "BounceRates"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.BounceRates",
+              "nativeQueryRef": "跳出率"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "ExitRates"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.ExitRates",
+              "nativeQueryRef": "退出率"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_growth_opportunities"
+                  }
+                },
+                "Property": "OpportunityPriority"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "77f62bfe1b7001404618",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "SessionID"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "687ff8428072d9ba3700",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "BehaviorPropensityScore"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6c94086c8e23520a2e10",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "PropensityPercentileAmongUnpurchased"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0dc14160e6c39770583b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "OpportunityPriority"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vw_growth_opportunities",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "v"
+                          }
+                        },
+                        "Property": "OpportunityPriority"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'P1 历史高潜未购买'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "022896d56ab0dba00d88",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "VisitorType"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "42bb6062cb00e6e58060",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "TrafficType"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b0d77642235707ec4507",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e2ac594c3e34cae050bc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "ProductRelated"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a2e45c86e6ac2dba25b0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "ProductRelated_Duration"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d07cfeaa648eb020d7d6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "BounceRates"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f463a49140c3b432a259",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "ExitRates"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

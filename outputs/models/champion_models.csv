@@ -1,0 +1,3 @@
+﻿Scenario,ScenarioName,Model,ModelName,CVPRAUC,OOFBestF1,Threshold,TestAccuracy,TestPrecision,TestRecall,TestF1,TestROCAUC,TestPRAUC,TrueNegative,FalsePositive,FalseNegative,TruePositive,BestParams,ElapsedSeconds
+early_propensity,早期购买倾向模型,random_forest,随机森林,0.387281084,0.4377546401,0.439818181,0.7246553122,0.3017356475,0.5916230366,0.3996463307,0.7655761675,0.3583963551,1561,523,156,226,"{""classifier__max_depth"": null, ""classifier__min_samples_leaf"": 5}",102.6657903
+late_session,会话末期模型,random_forest,随机森林,0.7319040298,0.6891973446,0.5570019246,0.8888888889,0.6210762332,0.7251308901,0.6690821256,0.9223314508,0.7202764619,1915,169,105,277,"{""classifier__max_depth"": null, ""classifier__min_samples_leaf"": 5}",102.4787835

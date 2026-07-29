@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "电商power_优化版"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "186c45cf-2dfc-4ff6-9c66-180e3a7c4873"
+  }
+}

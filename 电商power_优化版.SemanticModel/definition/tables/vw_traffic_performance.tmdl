@@ -1,0 +1,112 @@
+table vw_traffic_performance
+	lineageTag: 46eeec26-8949-4406-8177-f43c915b9c0b
+
+	column TrafficType
+		dataType: int64
+		formatString: 0
+		lineageTag: 061bdeca-745d-42d7-8253-e5a6ad05f83d
+		summarizeBy: none
+		sourceColumn: TrafficType
+
+		annotation SummarizationSetBy = Automatic
+
+	column SessionCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 7beb956a-1e4f-4b98-b4df-a36da9bedbbb
+		summarizeBy: none
+		sourceColumn: SessionCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column PurchaseSessionCount
+		dataType: double
+		lineageTag: c9fbb4d3-7b78-43fc-a1f4-6028d6481bef
+		summarizeBy: none
+		sourceColumn: PurchaseSessionCount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PurchaseConversionRate
+		dataType: double
+		lineageTag: 58049e16-a0eb-495c-8f63-09542ba95943
+		summarizeBy: none
+		sourceColumn: PurchaseConversionRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SessionShare
+		dataType: double
+		lineageTag: 3f10eaa7-5d60-4d85-a2a0-1bab45cf5da9
+		summarizeBy: none
+		sourceColumn: SessionShare
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AverageProductPageViews
+		dataType: double
+		lineageTag: ad05bbf6-dee2-4a71-ad1e-41a2e054e6d6
+		summarizeBy: none
+		sourceColumn: AverageProductPageViews
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AverageBounceRate
+		dataType: double
+		lineageTag: 5adaf581-b0a0-4621-9e02-0a1a8ce2e36d
+		summarizeBy: none
+		sourceColumn: AverageBounceRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AverageExitRate
+		dataType: double
+		lineageTag: ec712e84-08ef-410f-80f9-d93e0ee47627
+		summarizeBy: none
+		sourceColumn: AverageExitRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OverallConversionRate
+		dataType: double
+		lineageTag: bbb4b1c2-b729-49ce-8415-431c7c9c4ad1
+		summarizeBy: none
+		sourceColumn: OverallConversionRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ChannelOpportunityType
+		dataType: string
+		lineageTag: fd2a57e1-8c74-43a0-a3a4-7ccf74bef88b
+		summarizeBy: none
+		sourceColumn: ChannelOpportunityType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_traffic_performance = m
+		mode: import
+		source =
+				let
+				  源 = MySQL.Database("localhost:3306", "online_shoppers_analytics"),
+				  #"导航 1" = 源{[Schema = "online_shoppers_analytics", Item = "vw_traffic_performance"]}[Data]
+				in
+				  #"导航 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

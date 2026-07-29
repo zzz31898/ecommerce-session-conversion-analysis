@@ -1,0 +1,551 @@
+table vw_session_analysis
+	lineageTag: 1157dadf-c4f7-4463-b8e1-e6c1d01aa05e
+
+	measure 会话数量 = COUNTROWS(vw_session_analysis)
+		lineageTag: 489d1ae4-6770-4573-9f96-1862d01ad1eb
+
+	measure 购买会话数 = SUM(vw_session_analysis[RevenueFlag])
+		formatString: 0
+		lineageTag: 592eb043-c9f1-43f6-ab5d-d5a97b732737
+
+	measure 购买转化率 = DIVIDE([购买会话数], [会话数量])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: b7f7ee2d-9786-42ef-b01a-1394f4dad219
+
+	measure 平均产品页浏览量 =
+			
+			AVERAGE(vw_session_analysis[ProductRelated])
+		formatString: 0.0
+		lineageTag: b1a5212f-de08-41e6-aa5b-9c7e4bcc90dd
+
+	measure 新访客会话数 =
+			
+			CALCULATE(
+			    [会话数量],
+			    vw_session_analysis[VisitorType] = "New_Visitor"
+			)
+		formatString: 0
+		lineageTag: 645820fa-d7b8-4ccf-a1d8-da3729e07a08
+
+	measure 新访客占比 =
+			
+			DIVIDE(
+			    [新访客会话数],
+			    [会话数量]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 32bf2c77-3b8d-4a96-8341-26b0f3dc6378
+
+	measure 新访客转化率 =
+			
+			CALCULATE(
+			    [购买转化率],
+			    vw_session_analysis[VisitorType] = "New_Visitor"
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e9f3d492-5f3e-4826-9b5a-1d2fa69c5987
+
+	measure 回访访客转化率 =
+			
+			CALCULATE(
+			    [购买转化率],
+			    vw_session_analysis[VisitorType] = "Returning_Visitor"
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d7b2f5a4-c7e8-450c-90e0-832eba7d4258
+
+	measure 平均跳出率 =
+			
+			AVERAGE(vw_session_analysis[BounceRates])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4aaead57-28cb-4b0e-9ff5-3e96d3eb7002
+
+	measure 平均退出率 =
+			
+			AVERAGE(vw_session_analysis[ExitRates])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 022aea50-4dbc-4ede-9471-53d199fbb489
+
+	measure 平均产品页停留时长 =
+			
+			AVERAGE(
+			    'vw_session_analysis'[ProductRelated_Duration]
+			)
+		lineageTag: 88e9b99d-b1b5-4d77-bd0e-a1f52a93d1a4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 产品页浏览量中位数 =
+			
+			MEDIAN(
+			    'vw_session_analysis'[ProductRelated]
+			)
+		lineageTag: e357d88d-0924-447a-a669-82b5119d838e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 产品页停留时长中位数 =
+			
+			MEDIAN(
+			    'vw_session_analysis'[ProductRelated_Duration]
+			)
+		lineageTag: 630c537a-a991-445a-90c7-17e0122e4360
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 平均管理页访问量 =
+			
+			AVERAGE(
+			    'vw_session_analysis'[Administrative]
+			)
+		lineageTag: 36be44a6-dab1-45e0-a9de-71d89161e2e2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 平均信息页访问量 =
+			
+			AVERAGE(
+			    'vw_session_analysis'[Informational]
+			)
+		lineageTag: 6b637dfe-e77c-47ce-8650-78091610da07
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '平均 PageValues' =
+			
+			AVERAGE(
+			    'vw_session_analysis'[PageValues]
+			)
+		lineageTag: 3edb7687-92a3-4c22-a9cd-61817cdda9d8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SessionID
+		dataType: int64
+		formatString: 0
+		lineageTag: e791706e-d482-4ea3-afff-7d86d19a0d02
+		summarizeBy: none
+		sourceColumn: SessionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Administrative
+		dataType: int64
+		formatString: 0
+		lineageTag: affb6d65-8a24-4538-9f8d-0a67de0c4209
+		summarizeBy: sum
+		sourceColumn: Administrative
+
+		annotation SummarizationSetBy = Automatic
+
+	column Administrative_Duration
+		dataType: double
+		lineageTag: 3bd346bc-ee32-42a3-84c9-68e5aa0f0ed8
+		summarizeBy: sum
+		sourceColumn: Administrative_Duration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Informational
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ed8db8e-b34c-400b-9a4a-4b8cd8d100ff
+		summarizeBy: sum
+		sourceColumn: Informational
+
+		annotation SummarizationSetBy = Automatic
+
+	column Informational_Duration
+		dataType: double
+		lineageTag: 02200255-1ef9-442a-aa25-9d279631489d
+		summarizeBy: sum
+		sourceColumn: Informational_Duration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ProductRelated
+		dataType: int64
+		formatString: 0
+		lineageTag: 595ae9af-a5f2-4564-89b5-caad43cb28f2
+		summarizeBy: sum
+		sourceColumn: ProductRelated
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductRelated_Duration
+		dataType: double
+		lineageTag: d58d85c2-958e-41db-b661-a4f489259911
+		summarizeBy: sum
+		sourceColumn: ProductRelated_Duration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BounceRates
+		dataType: double
+		lineageTag: b194ffab-e468-47e7-a51d-59fc97d1ba01
+		summarizeBy: sum
+		sourceColumn: BounceRates
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ExitRates
+		dataType: double
+		lineageTag: 6b25cd6b-c964-4d07-b6cf-134639e4c403
+		summarizeBy: sum
+		sourceColumn: ExitRates
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PageValues
+		dataType: double
+		lineageTag: c64e5e8e-7337-4e84-bd63-97929e963ccc
+		summarizeBy: sum
+		sourceColumn: PageValues
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SpecialDay
+		dataType: double
+		lineageTag: 0eafa1f0-fa2c-4aec-ae04-a85004205fa5
+		summarizeBy: sum
+		sourceColumn: SpecialDay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Month
+		dataType: string
+		lineageTag: 804d6363-f6ae-4346-91de-72ef75e0a6f0
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: MonthOrder
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column OperatingSystems
+		dataType: int64
+		formatString: 0
+		lineageTag: dd2d75bd-199e-427a-86a4-29848ffcfe27
+		summarizeBy: sum
+		sourceColumn: OperatingSystems
+
+		annotation SummarizationSetBy = Automatic
+
+	column Browser
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c179c14-9285-49bb-8978-1fa2d8ac0870
+		summarizeBy: sum
+		sourceColumn: Browser
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d0af5ad-bf83-468f-97b3-9aedbd29fb7e
+		summarizeBy: sum
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column TrafficType
+		dataType: int64
+		formatString: 0
+		lineageTag: ee07c8cb-0bab-44f7-a019-5d3f91bd1d7f
+		summarizeBy: sum
+		sourceColumn: TrafficType
+
+		annotation SummarizationSetBy = Automatic
+
+	column VisitorType
+		dataType: string
+		lineageTag: 325a767b-f978-4bc5-bece-880d45a9c909
+		summarizeBy: none
+		sourceColumn: VisitorType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ec3e40f0-6501-4d45-af36-c713dbfb15d9
+		summarizeBy: none
+		sourceColumn: Weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revenue
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 03459c9a-6685-44ed-ad81-a897d67aaad3
+		summarizeBy: none
+		sourceColumn: Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column RevenueFlag
+		dataType: int64
+		formatString: 0
+		lineageTag: 01acc466-d759-4373-ba6f-4c2f7d39a396
+		summarizeBy: sum
+		sourceColumn: RevenueFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: 647fb3c5-7d5c-4c04-abb9-e5c312aa5586
+		summarizeBy: sum
+		sourceColumn: MonthOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductDepthGroup
+		dataType: string
+		lineageTag: df675aad-0c50-4a2c-8500-5450085a217e
+		summarizeBy: none
+		sourceColumn: ProductDepthGroup
+		sortByColumn: ProductDepthOrder
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductDepthOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: 354ea6af-b863-411c-a5a0-b645fd1be629
+		summarizeBy: sum
+		sourceColumn: ProductDepthOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductDurationGroup
+		dataType: string
+		lineageTag: 5b91b372-cb8b-4f61-97cb-47fc50ba7a3d
+		summarizeBy: none
+		sourceColumn: ProductDurationGroup
+		sortByColumn: ProductDurationOrder
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductDurationOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: af78b66c-7e79-420b-a39b-66a46b141c97
+		summarizeBy: sum
+		sourceColumn: ProductDurationOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column HighBounceSession
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d73d6cbe-72ae-4e68-97f7-e9aecefb16d6
+		summarizeBy: none
+		sourceColumn: HighBounceSession
+
+		annotation SummarizationSetBy = Automatic
+
+	column HighExitSession
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5778a56a-b0b6-4339-a3f4-72b26371b413
+		summarizeBy: none
+		sourceColumn: HighExitSession
+
+		annotation SummarizationSetBy = Automatic
+
+	column BehaviorPropensityScore
+		dataType: double
+		lineageTag: 74d75ff3-625d-4a46-af8f-d68f0abd2e0e
+		summarizeBy: sum
+		sourceColumn: BehaviorPropensityScore
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BehaviorPropensityScoreSource
+		dataType: string
+		lineageTag: 00372811-bfda-42e9-b7d1-0cafe46e747c
+		summarizeBy: none
+		sourceColumn: BehaviorPropensityScoreSource
+
+		annotation SummarizationSetBy = Automatic
+
+	column PageValuesRetrospectiveBenchmarkScore
+		dataType: double
+		lineageTag: 64490df8-f888-4474-829a-0beb3181af11
+		summarizeBy: sum
+		sourceColumn: PageValuesRetrospectiveBenchmarkScore
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PageValuesBenchmarkScoreSource
+		dataType: string
+		lineageTag: 4da4b274-af11-494a-a0c2-317554cb93c9
+		summarizeBy: none
+		sourceColumn: PageValuesBenchmarkScoreSource
+
+		annotation SummarizationSetBy = Automatic
+
+	column PropensityPercentileAmongUnpurchased
+		dataType: double
+		lineageTag: 2793a5d1-2fa6-4784-821e-87cc1427f459
+		summarizeBy: sum
+		sourceColumn: PropensityPercentileAmongUnpurchased
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HistoricalHighPotentialTop10Percent
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7fac462a-9a37-4d84-8126-cedb583ab5ed
+		summarizeBy: none
+		sourceColumn: HistoricalHighPotentialTop10Percent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期类型 =
+			
+			IF(
+			    LOWER(TRIM(vw_session_analysis[Weekend])) = "true",
+			    "周末",
+			    "工作日"
+			)
+		lineageTag: 52427653-7b3e-4b46-8c5b-c78605324fae
+		summarizeBy: none
+		sortByColumn: 日期类型排序
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期类型排序 =
+			
+			IF(
+			    'vw_session_analysis'[Weekend],
+			    2,
+			    1
+			)
+		formatString: 0
+		lineageTag: 22b7ebb8-5ad6-428f-bf9f-77fdf0e608e3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 购买状态 =
+			
+			IF(
+			    'vw_session_analysis'[RevenueFlag] = 1,
+			    "购买",
+			    "未购买"
+			)
+		lineageTag: c3be8316-b5a1-458c-a26d-45554a05c4d5
+		summarizeBy: none
+		sortByColumn: 购买状态排序
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 购买状态排序 =
+			
+			IF(
+			    'vw_session_analysis'[RevenueFlag] = 1,
+			    2,
+			    1
+			)
+		formatString: 0
+		lineageTag: d028d119-0d3c-4120-8383-be525e75135c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 管理页访问状态 =
+			
+			IF(
+			    'vw_session_analysis'[Administrative] > 0,
+			    "访问管理页",
+			    "未访问管理页"
+			)
+		lineageTag: 8c2d439f-f9d7-490e-a77e-c3483c75d5df
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 高跳出状态 =
+			
+			IF(
+			    'vw_session_analysis'[HighBounceSession],
+			    "高跳出",
+			    "非高跳出"
+			)
+		lineageTag: 1f18a76e-1e5f-490f-8d70-1022d6f88efb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 高退出状态 =
+			
+			IF(
+			    'vw_session_analysis'[HighExitSession],
+			    "高退出",
+			    "非高退出"
+			)
+		lineageTag: b409067d-74fb-4050-aee6-f7fb1ba0fb88
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 信息页访问状态 =
+			
+			IF(
+			    'vw_session_analysis'[Informational] > 0,
+			    "访问信息页",
+			    "未访问信息页"
+			)
+		lineageTag: f63c0e65-d088-44fe-9cbb-1b042193700e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_session_analysis = m
+		mode: import
+		source =
+				let
+				  源 = MySQL.Database("localhost:3306", "online_shoppers_analytics"),
+				  #"导航 1" = 源{[Schema = "online_shoppers_analytics", Item = "vw_session_analysis"]}[Data]
+				in
+				  #"导航 1"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

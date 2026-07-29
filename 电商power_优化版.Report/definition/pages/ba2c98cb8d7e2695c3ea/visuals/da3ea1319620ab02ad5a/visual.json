@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "da3ea1319620ab02ad5a",
+  "position": {
+    "x": 832.91665924919971,
+    "y": 117.66660054524741,
+    "z": 8000,
+    "height": 96.666666666666671,
+    "width": 205,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "平均产品页浏览量"
+                }
+              },
+              "queryRef": "vw_session_analysis.平均产品页浏览量",
+              "nativeQueryRef": "平均产品页浏览量"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_session_analysis"
+                  }
+                },
+                "Property": "平均产品页浏览量"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

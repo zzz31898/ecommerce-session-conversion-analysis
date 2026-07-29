@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-20T18:51:48.256038+08:00",
+  "input_file": "C:\\Users\\zhh\\Desktop\\项目\\电商网站用户行为与购买转化分析\\online_shoppers_analysis_ready_v2.csv",
+  "input_sha256": "647f377f150cbd2c09cfceb8b02e827502ad95318d3836a6cc763c7711566e84",
+  "rows": 12330,
+  "target": "RevenueFlag",
+  "positive_rate": 0.15474452554744525,
+  "random_state": 42,
+  "test_size": 0.2,
+  "cv_folds": 5,
+  "quick_mode": false,
+  "selection_metric": "average_precision_pr_auc",
+  "threshold_rule": "maximize_f1_on_training_out_of_fold_predictions",
+  "scenarios": {
+    "early_propensity": {
+      "name": "早期购买倾向模型",
+      "description": "排除PageValues，用于较早阶段的运营干预和高潜会话识别。",
+      "include_page_values": false
+    },
+    "late_session": {
+      "name": "会话末期模型",
+      "description": "包含PageValues，用于会话接近结束时的购买判断。",
+      "include_page_values": true
+    }
+  },
+  "champions": {
+    "early_propensity": {
+      "model": "random_forest",
+      "cv_pr_auc": 0.3872810839680765,
+      "test_pr_auc": 0.3583963550927662,
+      "threshold": 0.43981818101015413,
+      "best_params": {
+        "classifier__max_depth": null,
+        "classifier__min_samples_leaf": 5
+      }
+    },
+    "late_session": {
+      "model": "random_forest",
+      "cv_pr_auc": 0.7319040297828746,
+      "test_pr_auc": 0.7202764618752543,
+      "threshold": 0.557001924640817,
+      "best_params": {
+        "classifier__max_depth": null,
+        "classifier__min_samples_leaf": 5
+      }
+    }
+  },
+  "versions": {
+    "python": "3.9.25 (main, Nov  3 2025, 22:44:01) [MSC v.1929 64 bit (AMD64)]",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.6.1",
+    "joblib": "1.5.3"
+  }
+}

@@ -1,0 +1,3 @@
+﻿Dimension,SourceColumn,ChiSquare,DegreesOfFreedom,PValue,CramerV,EffectMagnitude,MinimumExpectedCount,ExpectedCellsBelow5,AssumptionMet,SampleSize,AdjustedPValueBH,SignificantAfterBH
+访客类型与购买,VisitorType,135.251922819,2,4.26990415229e-30,0.104734601761,小,13.1532846715,0,True,12330,8.53980830459e-30,True
+周末与购买,WeekendLabel,10.5818351483,1,0.00114204236371,0.029295367972,可忽略,443.80729927,0,True,12330,0.00114204236371,True

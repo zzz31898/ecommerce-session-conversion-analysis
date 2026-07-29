@@ -1,0 +1,15 @@
+﻿Scenario,ScenarioName,Metric,Lower95,Upper95,BootstrapIterations
+early_propensity,排除PageValues的会话行为模型,Accuracy,0.7080190592,0.7420924574,1000
+early_propensity,排除PageValues的会话行为模型,Precision,0.2787441147,0.325103547,1000
+early_propensity,排除PageValues的会话行为模型,Recall,0.5418848168,0.6413612565,1000
+early_propensity,排除PageValues的会话行为模型,F1,0.3694132402,0.4307739666,1000
+early_propensity,排除PageValues的会话行为模型,ROCAUC,0.7427288503,0.787906739,1000
+early_propensity,排除PageValues的会话行为模型,PRAUC,0.3228462049,0.4062159638,1000
+early_propensity,排除PageValues的会话行为模型,BrierScore,0.1443003054,0.1552743126,1000
+late_session,PageValues回顾性基准模型,Accuracy,0.8767234388,0.901054339,1000
+late_session,PageValues回顾性基准模型,Precision,0.5859589461,0.6586213609,1000
+late_session,PageValues回顾性基准模型,Recall,0.6779450262,0.7670811518,1000
+late_session,PageValues回顾性基准模型,F1,0.6348171205,0.7017167811,1000
+late_session,PageValues回顾性基准模型,ROCAUC,0.9084050381,0.9343993064,1000
+late_session,PageValues回顾性基准模型,PRAUC,0.6810928319,0.7580184053,1000
+late_session,PageValues回顾性基准模型,BrierScore,0.08322873693,0.09443718549,1000

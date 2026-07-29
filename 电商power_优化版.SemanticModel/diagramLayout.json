@@ -1,0 +1,118 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 318.66624351349992,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 905.66624351349992,
+            "y": 126.85921770976103
+          },
+          "nodeIndex": "vw_session_analysis",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1189.6662435135,
+            "y": 126.85921770976103
+          },
+          "nodeIndex": "vw_growth_opportunities",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 621.66624351349992,
+            "y": -45.086489467748606
+          },
+          "nodeIndex": "model_operating_points",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 47.893781642775821
+          },
+          "nodeIndex": "model_metric_ci",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 335.80819294596535,
+            "y": -50
+          },
+          "nodeIndex": "model_evaluation",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 340.12309552788679,
+            "y": 303.71843541952194
+          },
+          "nodeIndex": "model_decile_lift",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1423.6662435135,
+            "y": 176.85921770976097
+          },
+          "nodeIndex": "vw_traffic_performance",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1657.6662435135,
+            "y": 226.85921770976097
+          },
+          "nodeIndex": "model_feature_availability",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "所有表",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "所有表",
+  "defaultDiagram": "所有表"
+}

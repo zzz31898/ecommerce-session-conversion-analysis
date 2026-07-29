@@ -1,0 +1,30 @@
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Local configuration
+.env
+.env.*
+.vscode/
+.agents/
+
+# Power BI local state (keep the PBIP project definition)
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Reproducible model binaries
+*.joblib
+
+# Local archives and superseded generated files
+online+shoppers+purchasing+intention+dataset.zip
+online_shoppers_cleaned_base.csv
+online_shoppers_analysis_ready.csv
+1.ipynb
+
+# Operating-system and office temporary files
+.DS_Store
+Thumbs.db
+~$*

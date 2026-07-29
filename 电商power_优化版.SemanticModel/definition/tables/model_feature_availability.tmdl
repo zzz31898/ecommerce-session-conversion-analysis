@@ -1,0 +1,56 @@
+table model_feature_availability
+	lineageTag: 9e33532a-f55e-426d-8297-bd116efc18e0
+
+	column FeatureGroup
+		dataType: string
+		lineageTag: 38623eff-a99c-4db0-8ed2-3a5bd1f762f8
+		summarizeBy: none
+		sourceColumn: FeatureGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fields
+		dataType: string
+		lineageTag: cb8b5070-4797-4a2b-89d9-52576ba52a5c
+		summarizeBy: none
+		sourceColumn: Fields
+
+		annotation SummarizationSetBy = Automatic
+
+	column Availability
+		dataType: string
+		lineageTag: d70f5540-ea61-437c-850a-7ab2e0a4b586
+		summarizeBy: none
+		sourceColumn: Availability
+
+		annotation SummarizationSetBy = Automatic
+
+	column AllowedForRealTimeEarlyIntervention
+		dataType: string
+		lineageTag: 73931ed3-e950-4b22-b71c-b4b58fc3d91e
+		summarizeBy: none
+		sourceColumn: AllowedForRealTimeEarlyIntervention
+
+		annotation SummarizationSetBy = Automatic
+
+	column Decision
+		dataType: string
+		lineageTag: d4a93d78-9fe2-4e88-bc70-8368fd0c635d
+		summarizeBy: none
+		sourceColumn: Decision
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_feature_availability = m
+		mode: import
+		source =
+				let
+				  源 = MySQL.Database("localhost:3306", "online_shoppers_analytics"),
+				  #"导航 1" = 源{[Schema = "online_shoppers_analytics", Item = "model_feature_availability"]}[Data]
+				in
+				  #"导航 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../电商power_优化版.SemanticModel"
+    }
+  }
+}

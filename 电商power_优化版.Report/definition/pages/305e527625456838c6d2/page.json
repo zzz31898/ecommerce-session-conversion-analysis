@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "305e527625456838c6d2",
+  "displayName": "03 增长机会分析",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

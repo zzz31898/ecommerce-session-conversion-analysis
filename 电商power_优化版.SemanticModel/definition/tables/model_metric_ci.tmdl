@@ -1,0 +1,69 @@
+table model_metric_ci
+	lineageTag: ecfa5abf-f125-43d9-80ab-f82d3a16dd0b
+
+	column Scenario
+		dataType: string
+		lineageTag: e37728c3-ee4c-445e-956b-5b7f2549c4b6
+		summarizeBy: none
+		sourceColumn: Scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScenarioName
+		dataType: string
+		lineageTag: d40b00db-997a-4247-961b-1a43ddf90d43
+		summarizeBy: none
+		sourceColumn: ScenarioName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Metric
+		dataType: string
+		lineageTag: b6a17a3c-49dd-43e7-8215-3a69dc574e82
+		summarizeBy: none
+		sourceColumn: Metric
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lower95
+		dataType: double
+		lineageTag: 97a6062f-91fe-4f10-b8a9-07eb32fcc705
+		summarizeBy: sum
+		sourceColumn: Lower95
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Upper95
+		dataType: double
+		lineageTag: 01fe89ad-910c-4d95-8196-e11c565def82
+		summarizeBy: sum
+		sourceColumn: Upper95
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BootstrapIterations
+		dataType: int64
+		formatString: 0
+		lineageTag: e4ce8fa9-cbe5-4747-a765-3cc6b3fb8e53
+		summarizeBy: sum
+		sourceColumn: BootstrapIterations
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_metric_ci = m
+		mode: import
+		source =
+				let
+				  源 = MySQL.Database("localhost:3306", "online_shoppers_analytics"),
+				  #"导航 1" = 源{[Schema = "online_shoppers_analytics", Item = "model_metric_ci"]}[Data]
+				in
+				  #"导航 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

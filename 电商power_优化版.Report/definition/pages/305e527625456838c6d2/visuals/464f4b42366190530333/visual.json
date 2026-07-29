@@ -1,0 +1,160 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "464f4b42366190530333",
+  "position": {
+    "x": 0,
+    "y": 375.55555555555554,
+    "z": 3008,
+    "height": 160,
+    "width": 450,
+    "tabOrder": 3008
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "ProductDepthGroup"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.ProductDepthGroup",
+              "nativeQueryRef": "ProductDepthGroup",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "未购买会话数"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.未购买会话数",
+              "nativeQueryRef": "未购买会话数"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'高浏览但未购买图'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "32ae41f4c5d4139c7032",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "ProductDepthGroup"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7085ac51c8006373605d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "未购买会话数"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "718796b0085ae3814da3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_growth_opportunities"
+              }
+            },
+            "Property": "ProductRelated"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vw_growth_opportunities",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "v"
+                        }
+                      },
+                      "Property": "ProductRelated"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "21L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

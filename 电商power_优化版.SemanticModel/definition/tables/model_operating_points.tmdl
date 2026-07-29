@@ -1,0 +1,99 @@
+table model_operating_points
+	lineageTag: b263928b-6bb3-4ce0-b6a7-ebeef3c79aea
+
+	column Scenario
+		dataType: string
+		lineageTag: f2d15057-8208-4a92-a4c7-6790baf9a27a
+		summarizeBy: none
+		sourceColumn: Scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: e68f97b9-5ba2-4217-843e-f980f7ece3b3
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column SelectedTopPercent
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c84e2466-921e-4487-8a3b-1ac5440ab6cd
+		summarizeBy: sum
+		sourceColumn: SelectedTopPercent
+
+		annotation SummarizationSetBy = Automatic
+
+	column SelectedSessions
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c2a684b-c284-4a6d-a748-14a353cb3153
+		summarizeBy: sum
+		sourceColumn: SelectedSessions
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScoreThresholdAtCoverage
+		dataType: double
+		lineageTag: 52adcfff-cb3c-46c2-8e84-064ded786f5e
+		summarizeBy: sum
+		sourceColumn: ScoreThresholdAtCoverage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PurchasesCaptured
+		dataType: int64
+		formatString: 0
+		lineageTag: 4a2f5cab-9000-4d57-abd0-6684950b5ab9
+		summarizeBy: sum
+		sourceColumn: PurchasesCaptured
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrecisionValue
+		dataType: double
+		lineageTag: bcd5cb88-56c8-4ca6-9f7e-59bebe3be31d
+		summarizeBy: sum
+		sourceColumn: PrecisionValue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RecallValue
+		dataType: double
+		lineageTag: cdab04af-c5d0-439d-bf6d-b74ba9c616f5
+		summarizeBy: sum
+		sourceColumn: RecallValue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LiftVsTestBaseline
+		dataType: double
+		lineageTag: 2a1666d8-5edb-4607-86e7-97187e39b0fc
+		summarizeBy: sum
+		sourceColumn: LiftVsTestBaseline
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition model_operating_points = m
+		mode: import
+		source =
+				let
+				  源 = MySQL.Database("localhost:3306", "online_shoppers_analytics"),
+				  #"导航 1" = 源{[Schema = "online_shoppers_analytics", Item = "model_operating_points"]}[Data]
+				in
+				  #"导航 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

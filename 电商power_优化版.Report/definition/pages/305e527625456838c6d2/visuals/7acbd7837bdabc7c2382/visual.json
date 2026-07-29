@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "7acbd7837bdabc7c2382",
+  "position": {
+    "x": 0,
+    "y": 90,
+    "z": 3001,
+    "height": 124.61538461538461,
+    "width": 225.38461538461539,
+    "tabOrder": 3001
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_growth_opportunities"
+                    }
+                  },
+                  "Property": "未购买会话数"
+                }
+              },
+              "queryRef": "vw_growth_opportunities.未购买会话数",
+              "nativeQueryRef": "未购买会话数"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_growth_opportunities"
+                  }
+                },
+                "Property": "未购买会话数"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_growth_opportunities.未购买会话数"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

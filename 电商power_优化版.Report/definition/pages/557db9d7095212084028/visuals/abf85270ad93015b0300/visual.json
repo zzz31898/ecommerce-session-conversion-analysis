@@ -1,0 +1,214 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "abf85270ad93015b0300",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 201.42857142857144,
+    "width": 1270,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_evaluation"
+                    }
+                  },
+                  "Property": "行为模型 ROC-AUC"
+                }
+              },
+              "queryRef": "model_evaluation.行为模型 ROC-AUC",
+              "nativeQueryRef": "行为模型 ROC-AUC"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_evaluation"
+                    }
+                  },
+                  "Property": "行为模型 Recall"
+                }
+              },
+              "queryRef": "model_evaluation.行为模型 Recall",
+              "nativeQueryRef": "行为模型 Recall"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_evaluation"
+                    }
+                  },
+                  "Property": "行为模型 Precision"
+                }
+              },
+              "queryRef": "model_evaluation.行为模型 Precision",
+              "nativeQueryRef": "行为模型 Precision"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_evaluation"
+                    }
+                  },
+                  "Property": "行为模型 PR-AUC"
+                }
+              },
+              "queryRef": "model_evaluation.行为模型 PR-AUC",
+              "nativeQueryRef": "行为模型 PR-AUC"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_evaluation"
+                    }
+                  },
+                  "Property": "行为模型 F1"
+                }
+              },
+              "queryRef": "model_evaluation.行为模型 F1",
+              "nativeQueryRef": "行为模型 F1"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_evaluation"
+                    }
+                  },
+                  "Property": "行为模型 Brier"
+                }
+              },
+              "queryRef": "model_evaluation.行为模型 Brier",
+              "nativeQueryRef": "行为模型 Brier"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "model_evaluation"
+                  }
+                },
+                "Property": "行为模型 ROC-AUC"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d649d63f9292ea060dad",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "model_evaluation"
+              }
+            },
+            "Property": "行为模型 ROC-AUC"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8438eceda61d8297002b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "model_evaluation"
+              }
+            },
+            "Property": "行为模型 Recall"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d6a474956a8ec571e1d4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "model_evaluation"
+              }
+            },
+            "Property": "行为模型 Precision"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "92e4752d25eb0eb0075b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "model_evaluation"
+              }
+            },
+            "Property": "行为模型 PR-AUC"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8dd98cddb9300c2278a9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "model_evaluation"
+              }
+            },
+            "Property": "行为模型 F1"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1721b43075389cb47a13",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "model_evaluation"
+              }
+            },
+            "Property": "行为模型 Brier"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

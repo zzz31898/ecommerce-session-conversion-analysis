@@ -1,0 +1,215 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "6dbdd86f071db6e03a08",
+  "position": {
+    "x": 0,
+    "y": 580,
+    "z": 9000,
+    "height": 140,
+    "width": 1175.5555555555554,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "购买状态"
+                }
+              },
+              "queryRef": "vw_session_analysis.购买状态",
+              "nativeQueryRef": "购买状态",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "购买会话数"
+                }
+              },
+              "queryRef": "vw_session_analysis.购买会话数",
+              "nativeQueryRef": "购买会话数"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "产品页浏览量中位数"
+                }
+              },
+              "queryRef": "vw_session_analysis.产品页浏览量中位数",
+              "nativeQueryRef": "产品页浏览量中位数"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "产品页停留时长中位数"
+                }
+              },
+              "queryRef": "vw_session_analysis.产品页停留时长中位数",
+              "nativeQueryRef": "产品页停留时长中位数"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "平均跳出率"
+                }
+              },
+              "queryRef": "vw_session_analysis.平均跳出率",
+              "nativeQueryRef": "平均跳出率"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "平均退出率"
+                }
+              },
+              "queryRef": "vw_session_analysis.平均退出率",
+              "nativeQueryRef": "平均退出率"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "平均管理页访问量"
+                }
+              },
+              "queryRef": "vw_session_analysis.平均管理页访问量",
+              "nativeQueryRef": "平均管理页访问量"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "平均信息页访问量"
+                }
+              },
+              "queryRef": "vw_session_analysis.平均信息页访问量",
+              "nativeQueryRef": "平均信息页访问量"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_session_analysis"
+                    }
+                  },
+                  "Property": "平均 PageValues"
+                }
+              },
+              "queryRef": "vw_session_analysis.平均 PageValues",
+              "nativeQueryRef": "平均 PageValues"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_session_analysis"
+                  }
+                },
+                "Property": "购买状态"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "7D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
